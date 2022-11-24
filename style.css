@@ -1,0 +1,12 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  color: black;
+}
+
+section {
+  width: 50%;
+  height: 50%;
+  color: aqua;
+}
