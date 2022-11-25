@@ -1,12 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
-  width: 100vw;
-  height: 100vh;
-  color: black;
+  width: 100%;
+  height: 100%;
+  background-color: #dfd3c3;
+  color: #7d6e83;
+}
+
+#title {
+  height: 10%;
+  font-size: 48px;
+  padding: 16px;
+  background-color: #f8ede3;
+}
+
+#main {
+  width: 100%;
+  height: 90%;
+  display: flex;
 }
 
 section {
-  width: 50%;
-  height: 50%;
-  color: aqua;
+  width: calc(100% / 3);
+  height: 100%;
+}
+
+.section_title {
+  height: 8%;
+  padding: 16px;
+}
+
+.section_main {
+  height: 92%;
+  padding: 16px;
 }

@@ -8,8 +8,65 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>MQTT TEST</h1>
-    <section class="subscribe"></section>
-    <section class="publish"></section>
+    <header id="title">MQTT TEST</header>
+    <main id="main">
+      <section>
+        <div class="section_title">
+          <h1>subscribe</h1>
+        </div>
+        <div class="section_main">subscribe_display</div>
+      </section>
+      <section>
+        <div class="section_title">
+          <h1>publish</h1>
+        </div>
+        <form class="section_main">
+          <div class="form_item">
+            <label for="topic">topic</label>
+            <input type="text" name="topic" id="topic" />
+          </div>
+          <div class="form_item">
+            <label for="command">command</label>
+            <input type="text" name="command" id="command" />
+          </div>
+          <div class="form_item">
+            <label for="sender-select">sender</label>
+            <select name="senders" id="sender-select">
+              <option value="master">master</option>
+              <option value="scs">scs</option>
+            </select>
+          </div>
+          <div class="form_item">
+            <label for="reservoir_id">reservoir_id</label>
+            <input type="text" name="reservoir_id" id="reservoir_id" />
+          </div>
+          <div class="form_item">
+            <label for="gate_id">gate_id</label>
+            <input type="text" name="gate_id" id="gate_id" />
+          </div>
+          <div class="form_item">
+            <label for="paddy_id">paddy_id</label>
+            <input type="text" name="paddy_id" id="paddy_id" />
+          </div>
+          <div class="form_item">
+            <label for="level">level</label>
+            <input type="text" name="level" id="level" />
+          </div>
+          <div class="form_item">
+            <label for="classType">classType</label>
+            <input type="text" name="classType" id="classType" />
+          </div>
+          <button>PUBLISH</button>
+        </form>
+      </section>
+      <section>
+        <div class="section_title">
+          <h1>test</h1>
+        </div>
+        <ul class="section_main">
+          <li>test</li>
+        </ul>
+      </section>
+    </main>
   </body>
 </html>
