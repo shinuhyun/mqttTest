@@ -1,6 +1,7 @@
 import express from "express";
 import mqtt from "mqtt";
 import cors from "cors";
+import fs from "fs";
 
 const app = express();
 const port = 3000;
@@ -8,7 +9,6 @@ const port = 3000;
 import path from "path";
 
 import { fileURLToPath } from "url";
-import { json } from "stream/consumers";
 
 const corsOption = {
   origin: "*",
@@ -37,19 +37,24 @@ app.get("/js", (req, res) => {
 });
 
 app.post("/mqtt", async (req, res) => {
-  console.log(req.body);
   const { pub_ip, pub_topic, pub_message } = req.body;
   console.log("server", { pub_ip, pub_topic, pub_message });
-
   const client = mqtt.connect(`mqtt://${pub_ip}`);
   client.publish(pub_topic, pub_message);
-  client.publish(pub_topic, "lelele");
-  client.on("message", function (pub_topic, message) {
-    // message is Buffer
-    console.log(message.toString());
-    client.end();
-  });
   res.status(200).json({ pub_message });
+});
+
+export let contents = [];
+app.post("/message", async (req, res) => {
+  const { pub_ip, pub_topic, pub_message } = req.body;
+  console.log("server", { pub_ip, pub_topic, pub_message });
+  contents.push(req.body);
+  console.log(contents);
+  res.status(200).json({ pub_ip, pub_topic, pub_message });
+});
+
+app.get("/messages", async (req, res) => {
+  res.status(200).json({ contents });
 });
 
 app.listen(port, () => {
